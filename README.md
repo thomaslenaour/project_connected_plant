@@ -39,3 +39,8 @@ Table data contenant les données de la plante :
 * Résistances ?
 * Câbles ?
 * Mini USB vers USB
+
+ou un pack complet :
+
+https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-2895.html
+
