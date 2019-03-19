@@ -47,3 +47,7 @@ https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-2895.html
 ## Schéma directeur
 
 ![Schéma](images/schema_directeur.png)
+
+## Modèle Conceptuel des Données
+
+![Schéma MCD](images/schema_mcd.png)
