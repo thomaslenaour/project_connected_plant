@@ -17,7 +17,7 @@ Table plants contenant la liste des plantes :
 * Nom de la plante → VARCHAR 255
 * Catégorie de la plante → VARCHAR 255
 * Description de la plante → TEXT
-* Photo(s) de la plante → ?
+* Photo(s) de la plante → VARCHAR 255
 * Humidité optimale du sol → INT
 * Température optimale atmosphérique → INT
 * Luminosité optimale → INT
@@ -44,3 +44,6 @@ ou un pack complet :
 
 https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-2895.html
 
+## Schéma directeur
+
+![Schéma](images/schema_directeur.png)
