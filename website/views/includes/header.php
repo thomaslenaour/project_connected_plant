@@ -30,6 +30,27 @@
       </div>
     </div>
   </nav>
+
+  <?php
+  if (isset($errorMessage)) {
+  ?>
+    <div class="log-error-message alert alert-danger mb-0">
+      <div class="container">
+        <?= $errorMessage ?>
+      </div>
+    </div>
+  <?php
+  }
+  if (isset($successMessage)) {
+  ?>
+    <div class="log-success-message alert alert-success mb-0">
+      <div class="container">
+        <?= $successMessage ?>
+      </div>
+    </div>
+  <?php
+  }
+  ?>
 </header>
 
 <!-- MODALS -->
@@ -43,9 +64,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="#" method="POST" id="form-connection">
+        <form action="./" method="POST" id="form-connection">
           <div class="form-group">
-            <input type="text" class="form-control" name="email-c" placeholder="Adresse email" required>
+            <input type="email" class="form-control" name="email-c" placeholder="Adresse email" required>
           </div>
           <div class="form-group">
             <input type="password" class="form-control" name="password-c" placeholder="Mot de passe" required>
@@ -53,7 +74,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-success btn-block" form="form-connection">Se conneter</button>
+        <button type="submit" name="form-connection" class="btn btn-success btn-block" form="form-connection">Se conneter</button>
       </div>
     </div>
   </div>
@@ -71,7 +92,13 @@
       <div class="modal-body">
         <form action="./" method="POST" id="form-registration">
           <div class="form-group">
-            <input type="text" class="form-control" name="email-r" placeholder="Adresse email" required>
+            <input type="text" class="form-control" name="first-name-r" placeholder="Prénom" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="last-name-r" placeholder="Nom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email-r" placeholder="Adresse email" required>
           </div>
           <div class="form-group">
             <input type="password" class="form-control" name="password-r" placeholder="Mot de passe" required>

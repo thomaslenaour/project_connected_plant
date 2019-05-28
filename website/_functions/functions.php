@@ -18,3 +18,14 @@ function debug($var) {
     var_dump($var);
     echo '</pre>';
 }
+
+function isConnected() {
+    if (isset($_SESSION['isUserConnected']) && isset($_SESSION['userEmail']) && isset($_SESSION['userID'])) {
+        if (!empty($_SESSION['isUserConnected']) && !empty($_SESSION['userEmail']) && !empty($_SESSION['userID'])) {
+            return true;
+        }
+    }
+    else {
+        return false;
+    }
+}
