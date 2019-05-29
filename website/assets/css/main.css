@@ -14,3 +14,7 @@ body {
     background: url('../images/banner-me.jpg');
     background-attachment: fixed;
 }
+
+.main-title {
+    margin-top: 80px;
+}

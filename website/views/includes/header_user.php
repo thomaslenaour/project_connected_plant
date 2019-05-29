@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="./#presentation" class="nav-link">
+            <a href="./plants" class="nav-link">
               <i class="fas fa-seedling"></i> 
               Liste des plantes
             </a>
