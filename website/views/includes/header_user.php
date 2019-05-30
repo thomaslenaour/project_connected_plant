@@ -12,13 +12,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a href="./me" class="nav-link">
+            <a href="/me" class="nav-link">
               <i class="fas fa-user"></i> 
               Mon profil
             </a>
           </li>
           <li class="nav-item">
-            <a href="./plants" class="nav-link">
+            <a href="/plants" class="nav-link">
               <i class="fas fa-seedling"></i> 
               Liste des plantes
             </a>
@@ -30,13 +30,13 @@
           if (isset($_SESSION['userRank']) && $_SESSION['userRank'] == 2) {
           ?>
             <li class="nav-item mr-2">
-              <a href="./admin" class="nav-link btn btn-warning">Administration</a>
+              <a href="./admin" class="nav-link btn btn-info">Administration</a>
             </li>
           <?php
           }
           ?>
           <li class="nav-item">
-            <a href="./disconnect" class="nav-link btn btn-danger">Déconnexion</a>
+            <a href="./disconnect" class="nav-link btn btn-warning">Déconnexion</a>
           </li>
         </ul>
       </div>

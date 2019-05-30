@@ -18,3 +18,11 @@ body {
 .main-title {
     margin-top: 80px;
 }
+
+.img-plant {
+    border-radius: 10px;
+}
+
+.btn-margin {
+    margin-top: 80px;
+}
