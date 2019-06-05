@@ -42,8 +42,8 @@ if (isset($_POST['form-connection']) && isset($_POST['email-c']) && isset($_POST
                 $_SESSION['userFirstName'] = $dataUser['first_name'];
                 $_SESSION['userLastName'] = $dataUser['last_name'];
                 $_SESSION['userEmail'] = $dataUser['email'];
-                $_SESSION['userID'] = $dataUser['id'];
-                $_SESSION['userRank'] = $dataUser['rank'];
+                $_SESSION['userID'] = intval($dataUser['id']);
+                $_SESSION['userRank'] = intval($dataUser['rank']);
                 header('Location: ./me');
             }
             else {

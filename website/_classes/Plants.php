@@ -32,6 +32,33 @@ class Plants {
         }
     }
 
+    public static function getPlantsByUserId($idUser) {
+        global $db;
+
+        $idUser = str_secur($idUser);
+
+        $req = $db->fetch(
+            'SELECT plants.id, plants.name, plants.description
+            FROM plants
+            JOIN plants_user
+                ON plants_user.id_user = ?
+                AND plants_user.id_plant = plants.id', 
+            [$idUser], true);
+
+        return $req;
+    }
+    
+    public static function addPlantUser($idPlant, $idUser) {
+        global $db;
+
+        $idPlant = str_secur($idPlant);
+        $idUser = str_secur($idUser);
+
+        $req = $db->execute('INSERT INTO plants_user(id_plant, id_user, minutes) VALUES(?, ?, 0)', [$idPlant, $idUser]);
+
+        return $req;
+    }
+
     public static function getPlantById($id) {
         global $db;
 

@@ -31,4 +31,5 @@ if (isConnected() && isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_G
 }
 else {
     header('Location: ./?error=1');
+    exit;
 }

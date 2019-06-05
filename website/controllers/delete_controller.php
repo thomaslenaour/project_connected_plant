@@ -7,11 +7,14 @@ if (isConnected() && isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_G
 
     if ($deletePlant) {
         header('Location: /plants?delete=1');
+        exit;
     }
     else {
         header('Location: ./plant/' . $id . '?error=1');
+        exit;
     }
 }
 else {
     header('Location: ./?error=1');
+    exit;
 }

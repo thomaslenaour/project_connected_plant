@@ -41,11 +41,22 @@
     </div>
   <?php
   }
+
   if (isset($successMessage)) {
   ?>
     <div class="log-success-message alert alert-success mb-0">
       <div class="container">
         <?= $successMessage ?>
+      </div>
+    </div>
+  <?php
+  }
+
+  if (isset($_GET['error']) && !empty($_GET['error']) && is_numeric($_GET['error']) && intval($_GET['error']) == 1) {
+  ?>
+    <div class="log-danger-message alert alert-danger mb-0">
+      <div class="container">
+        <p class="error-message p-0 m-0">Vous devez être connecté pour accéder à cette page.</p>
       </div>
     </div>
   <?php

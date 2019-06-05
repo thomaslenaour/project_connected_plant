@@ -1,14 +1,14 @@
 <?php ob_start(); ?>
 
 <div class="container">
-	<h2 class="main-title">Liste des plantes</h2>
+    <h2 class="main-title">Mes plantes</h2>
 
-    <a href="#" class="btn btn-success btn-block my-3" data-toggle="modal" data-target="#addPlantModal">
+    <a href="" class="btn btn-success btn-block my-3" data-toggle="modal" data-target="#addPlantModal">
         <i class="fas fa-plus"></i> 
         Ajouter une plante
     </a>
 
-    <p class="lead">Les plantes sont classées par ordre alphabétique.</p>
+    <p class="lead">Vos plantes sont classées par ordre alphabétique.</p>
 
     <table class="table">
         <thead class="thead-light">
@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             <?php
-            foreach ($allPlants as $index => $plant) {
+            foreach ($plantsUser as $index => $plant) {
             ?>
                 <tr>
                     <th width="10%"scope="row"><?= $index + 1 ?></th>
@@ -48,27 +48,20 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="./plants" method="post" id="form-add-plant">
+                <form action="./myplants" method="post" id="form-add-plant-user">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Nom de la plante" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="category" class="form-control" placeholder="Catégorie de la plante" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="description" class="form-control" placeholder="Description de la plante" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="content" class="form-control" placeholder="Présentation de la plante" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="image" class="form-control" placeholder="URL de l'image (500x500)" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="flowering-period" class="form-control" placeholder="Période de floraison" required>
+                        <label for="plant-select">Sélectionnez la plante que vous souhaitez ajouter</label>
+                        <select name="plant-selected" id="plant-select" class="form-control">
+                            <option selected disabled>Choisissez une plante</option>
+                            <?php
+                            foreach ($allPlants as $index => $plant) {
+                                echo '<option value="' . $plant['id'] . '">' . $plant['name'] . '</option>';
+                            }
+                            ?>
+                        </select>
                     </div>
 
-                    <button type="submit" name="form-add-plant" id="form-add-plant" class="btn btn-success btn-block">
+                    <button type="submit" name="form-add-plant-user" id="form-add-plant-user" class="btn btn-success btn-block">
                         <i class="fas fa-plus"></i> 
                         Ajouter la plante
                     </button>

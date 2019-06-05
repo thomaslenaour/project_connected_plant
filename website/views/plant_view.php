@@ -16,7 +16,7 @@
             <p class=""><?= $dataPlant['description'] ?></p>
             <p><strong>Période de floraison : </strong><?= $dataPlant['flowering_period'] ?></p>
         </div>
-        <div class="col-md-8 d-none d-md-block mt-5">
+        <div class="col-md-4 offset-md-4 d-none d-md-block mt-5">
             <img src="<?= $dataPlant['image'] ?>" alt="Image de la plante" class="img-fluid img-plant" >
         </div>
     </div>

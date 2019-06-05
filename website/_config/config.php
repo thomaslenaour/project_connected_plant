@@ -43,6 +43,6 @@ define("WEBSITE_FACEBOOK_IMAGE", "");
 
 // DataBase informations
 define("DATABASE_HOST", "localhost");
-define("DATABASE_NAME", "id9774021_connectedflowers");
-define("DATABASE_USER", "id9774021_alexantoinetln");
-define("DATABASE_PASSWORD", "btTn4n2Ku7RSKG54ya54");
+define("DATABASE_NAME", "connected_flowers");
+define("DATABASE_USER", "root");
+define("DATABASE_PASSWORD", "root");
