@@ -12,46 +12,9 @@
 			<img src="./assets/images/women-plant.png" alt="Illustration femme en train d'arroser des plantes" class="img-fluid">
 		</div>
 	</div>
-
-	<h2>Les données de votre plante connectée</h2>
-
-	<div class="row my-5">
-		<div class="col-md-3">
-			<div class="card text-center">
-				<div class="card-body">
-					<h4 class="card-title">Humidité (%)</h4>
-					<p class="display-4">60 %</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="card text-center">
-				<div class="card-body">
-					<h4 class="card-title">Pression (Pa)</h4>
-					<p class="display-4">8 Pa</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="card text-center">
-				<div class="card-body">
-					<h4 class="card-title">Luminosité (%)</h4>
-					<p class="display-4">79 %</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="card text-center">
-				<div class="card-body">
-					<h4 class="card-title">Température (°C)</h4>
-					<p class="display-4">22 °C</p>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
 <?php
 $content = ob_get_clean();
 
-require './views/includes/template_user.php';
+require './views/includes/template.php';

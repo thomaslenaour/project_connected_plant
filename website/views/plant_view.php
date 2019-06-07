@@ -75,4 +75,4 @@
 <?php
 $content = ob_get_clean();
 
-require './views/includes/template_user.php';
+require './views/includes/template.php';

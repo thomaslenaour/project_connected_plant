@@ -45,6 +45,7 @@ if (isset($_POST['form-connection']) && isset($_POST['email-c']) && isset($_POST
                 $_SESSION['userID'] = intval($dataUser['id']);
                 $_SESSION['userRank'] = intval($dataUser['rank']);
                 header('Location: ./me');
+                exit;
             }
             else {
                 $errorMessage = '<p class="error-message p-0 m-0"><strong>Erreur :</strong> Mot de passe invalide. Merci de réessayer.</p>';

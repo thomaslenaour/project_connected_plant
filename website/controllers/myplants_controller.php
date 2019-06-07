@@ -1,14 +1,15 @@
 <?php
-// echo '<div style="margin-top: 150px;"></div>';
 
 if (isConnected()) {
     $idUser = $_SESSION['userID'];
 
-    if (isset($_POST['form-add-plant-user']) && isset($_POST['plant-selected'])) {
-        if (!empty($_POST['plant-selected'])) {
+    // Create
+    if (isset($_POST['form-add-plant-user']) && isset($_POST['plant-selected'])  && isset($_POST['minutes'])) {
+        if (!empty($_POST['plant-selected']) && !empty($_POST['minutes']) && is_numeric($_POST['minutes'])) {
             $idPlant = intval($_POST['plant-selected']);
+            $minutes = intval($_POST['minutes']);
 
-            $addPlantUser = Plants::addPlantUser($idPlant, $idUser);
+            $addPlantUser = Plants::addPlantUser($idPlant, $idUser, $minutes);
 
             if ($addPlantUser) {
                 $successMessage = '<p class="success-message p-0 m-0">La plante a bien été ajouté à votre liste personnel !</p>';
@@ -22,6 +23,21 @@ if (isConnected()) {
         }
     }
 
+    // Delete
+    if (isset($_GET['delete']) && !empty($_GET['delete']) && is_numeric($_GET['delete'])) {
+        $idPlantUser = intval($_GET['delete']);
+    
+        $deletePlant = Plants::deletePlantUser($idPlantUser, $idUser);
+    
+        if ($deletePlant) {
+            $successMessage = '<p class="success-message p-0 m-0">La plante a bien été supprimé de votre liste personnel !</p>';
+        }
+        else {
+            $errorMessage = '<p class="error-message p-0 m-0">Erreur lors de la requête. Merci de réessayer.</p>';
+        }
+    }
+
+    // Get
     $allPlants = Plants::getPlants();
     $plantsUser = Plants::getPlantsByUserId($idUser);
 }

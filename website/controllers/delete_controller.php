@@ -10,7 +10,7 @@ if (isConnected() && isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_G
         exit;
     }
     else {
-        header('Location: ./plant/' . $id . '?error=1');
+        header('Location: /plants?error=2');
         exit;
     }
 }

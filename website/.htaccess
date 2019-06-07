@@ -4,3 +4,5 @@ RewriteEngine On
 RewriteRule ^([a-zA-Z0-9_\-]*)?/?$ index.php?page=$1&%{QUERY_STRING}
 RewriteRule ^plant/([0-9]+)$ index.php?page=plant&id=$1
 RewriteRule ^delete/([0-9]+)$ index.php?page=delete&id=$1
+RewriteRule ^data/([0-9]+)$ index.php?page=data&id=$1
+RewriteRule ^deleteMyPlant/([0-9]+)$ index.php?page=delete_my_plant&id=$1

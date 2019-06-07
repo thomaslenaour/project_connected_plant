@@ -1,4 +1,16 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+if (isset($_GET['error']) && !empty($_GET['error']) && is_numeric($_GET['error']) && intval($_GET['error']) == 2) {
+    ?>
+    <div class="log-error-message alert alert-danger mb-0">
+        <div class="container">
+            <p class="error-message m-0 p-0">La plante ne vous appartient pas, merci de réessayer.</p>
+        </div>
+    </div>
+<?php
+}
+?>
+
 
 <div class="container">
     <h2 class="main-title">Mes plantes</h2>
@@ -16,7 +28,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nom de la plante</th>
                 <th scope="col">Description</th>
-                <th scope="col">Consulter</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +40,8 @@
                     <td width="20%"><?= $plant['name'] ?></td>
                     <td width="55%"><?= $plant['description'] ?></td>
                     <td width="15%">
-                        <a href="/plant/<?= $plant['id'] ?>" class="btn btn-primary btn-block">Consulter</a>
+                        <a href="/data/<?= $plant['id_plant_user'] ?>" class="btn btn-info btn-block"><i class="fas fa-eye"></i> Données</a>
+                        <a href="./myplants?delete=<?= $plant['id_plant_user'] ?>" class="btn btn-danger btn-block btn-delete-plant"><i class="fas fa-times"></i> Supprimer</a>
                     </td>
                 </tr>
             <?php
@@ -61,6 +74,10 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <input type="number" name="minutes" class="form-control" placeholder="Nombre de minutes avant actualisation" required>
+                    </div>
+
                     <button type="submit" name="form-add-plant-user" id="form-add-plant-user" class="btn btn-success btn-block">
                         <i class="fas fa-plus"></i> 
                         Ajouter la plante
@@ -74,4 +91,4 @@
 <?php
 $content = ob_get_clean();
 
-require './views/includes/template_user.php';
+require './views/includes/template.php';

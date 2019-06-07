@@ -63,4 +63,5 @@ class DbRequests {
         $results = self::exec($request, $values);
         return ($all) ? $results->fetchAll() : $results->fetch();
     }
+    
 }

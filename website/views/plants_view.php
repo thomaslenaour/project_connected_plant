@@ -1,4 +1,24 @@
-<?php ob_start(); ?>
+<?php ob_start();
+
+if (isset($_GET['error']) && !empty($_GET['error']) && is_numeric($_GET['error']) && intval($_GET['error']) == 2) {
+    ?>
+    <div class="log-error-message alert alert-danger mb-0">
+        <div class="container">
+            <p class="error-message m-0 p-0">La plante n'existe pas, merci de réessayer.</p>
+        </div>
+    </div>
+<?php
+}
+else if (isset($_GET['delete']) && !empty($_GET['delete']) && is_numeric($_GET['delete']) && intval($_GET['delete']) == 1) {
+?>
+    <div class="log-error-message alert alert-success mb-0">
+        <div class="container">
+            <p class="success-message m-0 p-0">La plante a bien été supprimée.</p>
+        </div>
+    </div>
+<?php
+}
+?>
 
 <div class="container">
 	<h2 class="main-title">Liste des plantes</h2>
@@ -81,4 +101,4 @@
 <?php
 $content = ob_get_clean();
 
-require './views/includes/template_user.php';
+require './views/includes/template.php';
