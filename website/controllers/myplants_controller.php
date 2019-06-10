@@ -4,12 +4,11 @@ if (isConnected()) {
     $idUser = $_SESSION['userID'];
 
     // Create
-    if (isset($_POST['form-add-plant-user']) && isset($_POST['plant-selected'])  && isset($_POST['minutes'])) {
-        if (!empty($_POST['plant-selected']) && !empty($_POST['minutes']) && is_numeric($_POST['minutes'])) {
+    if (isset($_POST['form-add-plant-user']) && isset($_POST['plant-selected'])) {
+        if (!empty($_POST['plant-selected'])) {
             $idPlant = intval($_POST['plant-selected']);
-            $minutes = intval($_POST['minutes']);
 
-            $addPlantUser = Plants::addPlantUser($idPlant, $idUser, $minutes);
+            $addPlantUser = Plants::addPlantUser($idPlant, $idUser);
 
             if ($addPlantUser) {
                 $successMessage = '<p class="success-message p-0 m-0">La plante a bien été ajouté à votre liste personnel !</p>';

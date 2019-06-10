@@ -4,9 +4,9 @@
 //       ERRORS DISPLAY        //
 // --------------------------- //
 
-//!\\ A enlever lors du déploiement
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+// //!\\ A enlever lors du déploiement
+// error_reporting(E_ALL);
+// ini_set('display_errors', true);
 
 
 // --------------------------- //
@@ -30,7 +30,7 @@ define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // Pour images, fichiers et
 // Website informations
 define("WEBSITE_TITLE", "Connected Flowers");
 define("WEBSITE_NAME", "Connected Flowers");
-define("WEBSITE_URL", "https://monsite.com");
+define("WEBSITE_URL", "https://connected-flowers.000webhostapp.com");
 define("WEBSITE_DESCRIPTION", "Connected Flowers");
 define("WEBSITE_KEYWORDS", "Connected Flowers");
 define("WEBSITE_LANGUAGE", "fr-FR");
@@ -45,6 +45,6 @@ define("WEBSITE_FACEBOOK_IMAGE", "");
 
 // DataBase informations
 define("DATABASE_HOST", "localhost");
-define("DATABASE_NAME", "connected_flowers");
-define("DATABASE_USER", "root");
-define("DATABASE_PASSWORD", "root");
+define("DATABASE_NAME", "id9774021_connectedflowers");
+define("DATABASE_USER", "id9774021_alexantoinetln");
+define("DATABASE_PASSWORD", "btTn4n2Ku7RSKG54ya54");

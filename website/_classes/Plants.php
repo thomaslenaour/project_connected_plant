@@ -89,7 +89,8 @@ class Plants {
                 'SELECT *
                 FROM plants_data
                 WHERE id_plant_user = ?
-                ORDER BY id DESC',
+                ORDER BY id DESC
+                LIMIT 30',
                 [$idPlantUser], true);
     
             return $req;
@@ -155,14 +156,13 @@ class Plants {
      * @param int $idUser
      * @return boolean
      */
-    public static function addPlantUser($idPlant, $idUser, $minutes) {
+    public static function addPlantUser($idPlant, $idUser) {
         global $db;
 
         $idPlant = str_secur($idPlant);
         $idUser = str_secur($idUser);
-        $minutes = intval(str_secur($minutes));
 
-        $req = $db->execute('INSERT INTO plants_user(id_plant, id_user, minutes) VALUES(?, ?, ?)', [$idPlant, $idUser, $minutes]);
+        $req = $db->execute('INSERT INTO plants_user(id_plant, id_user) VALUES(?, ?)', [$idPlant, $idUser]);
 
         return $req;
     }
@@ -189,7 +189,7 @@ class Plants {
         if ($isHisPlant) {
             $req = $db->fetch(
                 'INSERT INTO plants_data(pressure, temperature, floor_humidity, air_humidity, luminosity, date, id_plant_user)
-                VALUES(50, 50, 50, 50, 50, NOW(), ?)', 
+                VALUES(NULL, NULL, NULL, NULL, NULL, DATE_ADD(NOW(), INTERVAL 2 HOUR), ?)', 
                 [$idPlant]);
     
             return $req;
@@ -197,6 +197,35 @@ class Plants {
         else {
             return false;
         }
+    }
+
+    /**
+     * Add data user for Thomas
+     *
+     * @param int $idPlantUser
+     * @param float $pressure
+     * @param float $temperature
+     * @param float $floorHumidity
+     * @param float $airHumidity
+     * @param float $luminosity
+     * @return void
+     */
+    public static function addRealData($idPlantUser, $pressure, $temperature, $floorHumidity, $airHumidity, $luminosity) {
+        global $db;
+
+        $idPlantUser = intval(str_secur($idPlantUser));
+        $pressure = floatval(str_secur($pressure));
+        $temperature = floatval(str_secur($temperature));
+        $floorHumidity = intval(str_secur($floorHumidity));
+        $airHumidity = floatval(str_secur($airHumidity));
+        $luminosity = floatval(str_secur($luminosity));
+
+        $req = $db->execute(
+            'INSERT INTO plants_data(pressure, temperature, floor_humidity, air_humidity, luminosity, date, id_plant_user)
+            VALUES(?, ?, ?, ?, ?, DATE_ADD(NOW(), INTERVAL 2 HOUR), ?)', 
+            [$pressure, $temperature, $floorHumidity, $airHumidity, $luminosity, $idPlantUser]);
+
+        return $req;
     }
 
     /**

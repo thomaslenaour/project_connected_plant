@@ -4,20 +4,33 @@ if (isConnected() && isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_G
     $idPlantUser = intval($_GET['id']);
     $idUser = $_SESSION['userID'];
 
-    $addData = Plants::addData($idPlantUser, $idUser);
-
-    if (empty(array_filter($addData))) {
+    if ($idPlantUser == 1 && $idUser == 1) {
         $plantName = Plants::getPlantName($idPlantUser);
         $dataHistory = Plants::getPlantData($idPlantUser, $idUser);
 
-        if (!$dataHistory) {
-            header('Location: /myplants?error=2');
-            exit;
+        if ($dataHistory[0]['floor_humidity'] == 2) {
+            $dataHistory[0]['floor_humidity'] = 'Humide';
+        }
+        else {
+            $dataHistory[0]['floor_humidity'] = 'Pas humide';
         }
     }
     else {
-        header('Location: /myplants?error=2');
-        exit;
+        $addData = Plants::addData($idPlantUser, $idUser);
+
+        if (empty(array_filter($addData))) {
+            $plantName = Plants::getPlantName($idPlantUser);
+            $dataHistory = Plants::getPlantData($idPlantUser, $idUser);
+    
+            if (!$dataHistory) {
+                header('Location: /myplants?error=2');
+                exit;
+            }
+        }
+        else {
+            header('Location: /myplants?error=2');
+            exit;
+        }
     }
 }
 else {

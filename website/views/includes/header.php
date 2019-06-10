@@ -49,7 +49,7 @@ if (isConnected()) {
           }
           ?>
           <li class="nav-item">
-            <a href="./disconnect" class="nav-link btn btn-warning">Déconnexion</a>
+            <a href="/disconnect" class="nav-link btn btn-warning">Déconnexion</a>
           </li>
         </ul>
       </div>

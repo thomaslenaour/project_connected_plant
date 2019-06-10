@@ -74,10 +74,6 @@ if (isset($_GET['error']) && !empty($_GET['error']) && is_numeric($_GET['error']
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <input type="number" name="minutes" class="form-control" placeholder="Nombre de minutes avant actualisation" required>
-                    </div>
-
                     <button type="submit" name="form-add-plant-user" id="form-add-plant-user" class="btn btn-success btn-block">
                         <i class="fas fa-plus"></i> 
                         Ajouter la plante
