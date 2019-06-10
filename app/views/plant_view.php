@@ -5,10 +5,6 @@
         <i class="fas fa-edit"></i> 
         Modifier la plante
     </a>
-    <a href="/delete/<?= $dataPlant['id'] ?>" class="btn-delete-plant btn btn-danger btn-block mb-2">
-        <i class="fas fa-times"></i> 
-        Supprimer la plante
-    </a>
 
     <div class="row">
         <div class="col-md-4">
@@ -16,16 +12,14 @@
             <p class=""><?= $dataPlant['description'] ?></p>
             <p><strong>Période de floraison : </strong><?= $dataPlant['flowering_period'] ?></p>
         </div>
-        <div class="col-md-4 offset-md-4 d-none d-md-block mt-5">
+        <div class="col-md-8 d-none d-md-block mt-5">
             <img src="<?= $dataPlant['image'] ?>" alt="Image de la plante" class="img-fluid img-plant" >
         </div>
     </div>
 
     <div class="row py-5">
         <div class="col">
-            <p>
-                <?= $dataPlant['content'] ?>
-            </p>
+            <?php echo nl2br($dataPlant['content']) ?>
         </div>
     </div>
 </div>

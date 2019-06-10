@@ -12,6 +12,17 @@
 			<img src="./assets/images/women-plant.png" alt="Illustration femme en train d'arroser des plantes" class="img-fluid">
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="./assets/images/women-plant2.png" alt="Illustration femme en train d'arroser des plantes" class="img-fluid">
+		</div>
+		<div class="col-md-6 align-self-center">
+			<h2>Connected Flowers, en apprendre plus sur la botanique</h2>
+			<p class="lead text-justify">
+				Passioné par la botanique ? Connected Flowers est une véritable bibliothèque de plantes de toutes catégories. Vous y trouverez votre bonheur !
+			</p>
+		</div>
+	</div>
 </div>
 
 <?php

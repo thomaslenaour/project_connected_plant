@@ -60,8 +60,6 @@
 				else {
 					$data['floor_humidity'] = 'Pas humide';
 				}
-
-				echo $data['floor_humidity'];
             ?>
                 <tr>
                     <th width="15%"scope="row"><?= $data['date'] ?></th>
