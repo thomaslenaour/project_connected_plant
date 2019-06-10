@@ -86,7 +86,7 @@ class Plants {
 
         if (in_array($idPlantUser, $tablePlants)) {
             $req = $db->fetch(
-                'SELECT *
+                'SELECT id, pressure, temperature, floor_humidity, air_humidity, luminosity, DATE_FORMAT(date, "%e/%m/%Y à %H:%i:%s") AS date, id_plant_user
                 FROM plants_data
                 WHERE id_plant_user = ?
                 ORDER BY id DESC

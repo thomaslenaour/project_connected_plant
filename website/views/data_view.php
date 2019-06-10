@@ -10,7 +10,7 @@
 			<div class="card text-center">
 				<div class="card-body">
 					<h4 class="card-title">Humidité du sol</h4>
-					<p class="display-4"><?php echo is_null($dataHistory[0]['floor_humidity']) ? 'N/A' : $dataHistory[0]['floor_humidity'] ?></p>
+					<p class="display-4"><?php echo is_null($dataHistory[0]['floor_humidity']) ? 'N/A' : $humidity ?></p>
 				</div>
 			</div>
 		</div>
@@ -60,6 +60,8 @@
 				else {
 					$data['floor_humidity'] = 'Pas humide';
 				}
+
+				echo $data['floor_humidity'];
             ?>
                 <tr>
                     <th width="15%"scope="row"><?= $data['date'] ?></th>

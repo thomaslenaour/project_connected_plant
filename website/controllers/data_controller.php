@@ -9,10 +9,10 @@ if (isConnected() && isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_G
         $dataHistory = Plants::getPlantData($idPlantUser, $idUser);
 
         if ($dataHistory[0]['floor_humidity'] == 2) {
-            $dataHistory[0]['floor_humidity'] = 'Humide';
+            $humidity = 'Humide';
         }
         else {
-            $dataHistory[0]['floor_humidity'] = 'Pas humide';
+            $humidity = 'Pas humide';
         }
     }
     else {
